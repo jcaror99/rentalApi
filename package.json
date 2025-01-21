@@ -1,0 +1,17 @@
+{
+  "name": "rental_security",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.7.3"
+  }
+}
