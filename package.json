@@ -2,9 +2,11 @@
   "name": "rental_security",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch dist/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,8 @@
     "node": ">=22.13.0"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg-promise": "^11.10.2"
   }
 }

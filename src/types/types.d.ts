@@ -1,0 +1,28 @@
+export interface ISSLConfig {
+  rejectUnauthorized: boolean;
+  ca: string;
+  key: string;
+  cert: string;
+}
+
+export type DatabaseConfig = {
+  host: string;
+  port: number;
+  database: string;
+  user: string;
+  password: string | (() => string);
+  ssl?: boolean | ISSLConfig;
+  binary?: boolean;
+  client_encoding?: string;
+  application_name?: string;
+  fallback_application_name?: string;
+  idleTimeoutMillis?: number;
+  max?: number;
+  query_timeout?: number;
+  keepAlive?: boolean;
+  allowExitOnIdle?: boolean;
+};
+
+export type Routes = {
+  [key: string]: string;
+};
