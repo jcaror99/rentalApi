@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import db from "./controllers/databaseConnection.js";
 
 dotenv.config();
 
@@ -8,9 +9,13 @@ const port = process.env.PORT ?? 1234;
 
 app.disable("x-powered-by");
 
-app.get("/user", (req, res) => {
-  console.log("GET users");
-  res.send("Hello World!");
+app.get("/user", async (req, res) => {
+  try {
+    const users = await db.any("select * from sec.users");
+    res.json(users);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 app.listen(port, () => {
