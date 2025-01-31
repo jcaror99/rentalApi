@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import db from "./controllers/databaseConnection.js";
+import user from "./controllers/user.js";
 
 dotenv.config();
 
@@ -9,14 +9,7 @@ const port = process.env.PORT ?? 1234;
 
 app.disable("x-powered-by");
 
-app.get("/user", async (req, res) => {
-  try {
-    const users = await db.any("select * from sec.users");
-    res.json(users);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
+app.use("/user", user);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
