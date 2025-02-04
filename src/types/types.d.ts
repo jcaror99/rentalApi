@@ -26,3 +26,9 @@ export type DatabaseConfig = {
 export type Routes = {
   [key: string]: string;
 };
+
+export type User = {
+  user_id?: number;
+  name: string;
+  password: string;
+};
