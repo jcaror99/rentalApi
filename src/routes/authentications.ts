@@ -3,6 +3,6 @@ import { AuthenticationController } from "../controllers/authentications.js";
 
 const authentications = Router();
 
-authentications.post("/", AuthenticationController.authenticate);
+authentications.post("/", AuthenticationController.getAuthentication);
 
 export default authentications;

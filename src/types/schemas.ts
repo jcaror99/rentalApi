@@ -1,16 +1,11 @@
 import z from "zod";
-import { User } from "./types";
+import { Authentication } from "./types";
 
-const User = z.object({
-  user_id: z.number(),
+const Authentication = z.object({
   name: z.string(),
   password: z.string(),
 });
 
-export const validateUser = (user: User) => {
-  return User.safeParse(user);
-};
-
-export const validatePartialUser = (user: User) => {
-  return User.partial().safeParse(user);
+export const validateAuthentication = (data: Authentication) => {
+  return Authentication.safeParse(data);
 };

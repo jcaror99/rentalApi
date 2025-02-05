@@ -1,11 +1,5 @@
 import { Router } from "express";
+import { AuthenticationController } from "../controllers/authentications.js";
 const authentications = Router();
-authentications.post("/", async (req, res) => {
-    try {
-        const { name, password } = req.body;
-    }
-    catch (error) {
-        res.status(401).send("Invalid credentials");
-    }
-});
+authentications.post("/", AuthenticationController.getAuthentication);
 export default authentications;

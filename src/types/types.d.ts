@@ -23,12 +23,17 @@ export type DatabaseConfig = {
   allowExitOnIdle?: boolean;
 };
 
-export type Routes = {
+export type Object = {
   [key: string]: string;
 };
 
+export type Authentication = {
+  name: string;
+  password: string;
+};
+
 export type User = {
-  user_id?: number;
+  readonly user_id: number;
   name: string;
   password: string;
 };
