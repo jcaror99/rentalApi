@@ -32,6 +32,11 @@ export type Authentication = {
   password: string;
 };
 
+export type DataForToken = {
+  user_id: number;
+  name: string;
+};
+
 export type User = {
   readonly user_id: number;
   name: string;

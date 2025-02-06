@@ -1,7 +1,8 @@
 import base64ToObject from "../util/base64ToObject.js";
 import { UserController } from "../controllers/users.js";
-import { Authentication } from "../types/types.js";
+import { Authentication, DataForToken } from "../types/types.js";
 import { validateAuthentication } from "../types/schemas.js";
+import getJWTToken from "../util/getJWTToken.js";
 
 export class AuthenticationModel {
   static async getBasicAuthentication(inputData: string) {
@@ -11,7 +12,10 @@ export class AuthenticationModel {
     if (!result.success) {
       throw new Error(JSON.stringify(result.error.message));
     }
-    const data = await UserController.getBasicAuthentication(credentials);
-    return data;
+    const data = (await UserController.getBasicAuthentication(
+      result.data
+    )) as unknown as DataForToken[];
+    const token = getJWTToken(data);
+    return token;
   }
 }
