@@ -1,0 +1,28 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "rentalApp_mysql",
+      "username": "root",
+      "password": "Samm-web",
+      "database": "rentalApp"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "rentalApp_postgres",
+      "database": "rentalapp",
+      "username": "postgres",
+      "password": "Samm-web"
+    }
+  ]
+}
